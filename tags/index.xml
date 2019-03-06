@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on hudi HU</title>
+    <link>http://hudihu.github.io/tags/</link>
+    <description>Recent content in Tags on hudi HU</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://hudihu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Other</title>
+      <link>http://hudihu.github.io/tags/other/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://hudihu.github.io/tags/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random</title>
+      <link>http://hudihu.github.io/tags/random/</link>
+      <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://hudihu.github.io/tags/random/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random1</title>
+      <link>http://hudihu.github.io/tags/random1/</link>
+      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://hudihu.github.io/tags/random1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random2</title>
+      <link>http://hudihu.github.io/tags/random2/</link>
+      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://hudihu.github.io/tags/random2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>http://hudihu.github.io/tags/tutorial/</link>
+      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://hudihu.github.io/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

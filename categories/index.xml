@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on hudi HU</title>
+    <link>http://hudihu.github.io/categories/</link>
+    <description>Recent content in Categories on hudi HU</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    
+	<atom:link href="http://hudihu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Category 1</title>
+      <link>http://hudihu.github.io/categories/category-1/</link>
+      <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://hudihu.github.io/categories/category-1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Category 11</title>
+      <link>http://hudihu.github.io/categories/category-11/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://hudihu.github.io/categories/category-11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://hudihu.github.io/categories/hugo/</link>
+      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://hudihu.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
