@@ -1,78 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hudi HU</title>
-    <link>http://hudihu.github.io/</link>
-    <description>Recent content on hudi HU</description>
+    <title>Hello Friend NG</title>
+    <link>https://example.com/</link>
+    <description>Recent content on Hello Friend NG</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Wed, 06 Mar 2019 15:07:03 +0800</lastBuildDate>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://hudihu.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>False</title>
-      <link>http://hudihu.github.io/posts/false/</link>
-      <pubDate>Wed, 06 Mar 2019 15:07:03 +0800</pubDate>
+      <title>Creating a New Theme</title>
+      <link>https://example.com/posts/2014/09/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://hudihu.github.io/posts/false/</guid>
-      <description></description>
+      <guid>https://example.com/posts/2014/09/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
-      <title>Title of the post 6</title>
-      <link>http://hudihu.github.io/posts/post-6/</link>
-      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      <title>Migrate to Hugo from Jekyll</title>
+      <link>https://example.com/posts/2014/03/migrate-to-hugo-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://hudihu.github.io/posts/post-6/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+      <guid>https://example.com/posts/2014/03/migrate-to-hugo-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
     <item>
-      <title>Title of the post 3</title>
-      <link>http://hudihu.github.io/posts/post-3/</link>
-      <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+      <title>About</title>
+      <link>https://example.com/about/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://hudihu.github.io/posts/post-3/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+      <guid>https://example.com/about/</guid>
+      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
+It makes use of a variety of open source projects including:
+ https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
     </item>
     
     <item>
-      <title>Title of the post 2</title>
-      <link>http://hudihu.github.io/posts/post-2/</link>
-      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+      <title>(Hu)go Template Primer</title>
+      <link>https://example.com/posts/2014/04/hugo-template-primer/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://hudihu.github.io/posts/post-2/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+      <guid>https://example.com/posts/2014/04/hugo-template-primer/</guid>
+      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
+This document is a brief primer on using Go templates.</description>
     </item>
     
     <item>
-      <title>Create new hugo theme</title>
-      <link>http://hudihu.github.io/posts/post-1/</link>
-      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      <title>Getting Started with Hugo</title>
+      <link>https://example.com/posts/2014/04/getting-started-with-hugo/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://hudihu.github.io/posts/post-1/</guid>
-      <description>The hugo new theme command will scaffold the beginnings of a new theme for you to get you on your way.
-If you’re creating a theme with plans to share it on the Hugo Themes website please note the following: - If using inline styles you will need to use absolute URLs, for the linked assets to be served properly, e.g. &amp;lt;div style=&amp;quot;background: url(&#39;{{ &amp;quot;images/background.jpg&amp;quot; | absURL }}&#39;)&amp;quot;&amp;gt; - Make sure not to use a forward slash / in the beginning of a URL, because it will point to the host root.</description>
-    </item>
-    
-    <item>
-      <title>Title of the post 4</title>
-      <link>http://hudihu.github.io/posts/post-4/</link>
-      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://hudihu.github.io/posts/post-4/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
-    </item>
-    
-    <item>
-      <title>Title of the post 5</title>
-      <link>http://hudihu.github.io/posts/post-5/</link>
-      <pubDate>Wed, 10 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://hudihu.github.io/posts/post-5/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+      <guid>https://example.com/posts/2014/04/getting-started-with-hugo/</guid>
+      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at Install Hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
     </item>
     
   </channel>
