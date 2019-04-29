@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Jane Doe ">
+<meta name="description"
+    content="爬蟲入門 python 3 基本語法  variable and its type if/else loop
+ while for  define function
+ import
+  ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+if statement if （如果）：第一個條件
+elif （否則如果）：其他條件，可以有 0~多個
+else （否則）：沒有符合前述 condition 的其他狀況，可以不使用 每一組只會有一個（或沒有）條件成立
+記得屁股加 : (冒號) 需要以一個縮排indent（實際上為四個空白），做「排版」
+ if &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; &amp;lt;statement&amp;gt; elif &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; else: &amp;lt;statement&amp;gt;  While Loop 當條件成立，就執行 block 裡面的程式碼，之後再回到while開頭再問一次條件是否成立
+條件不成立，就不執行 block 裡面的程式碼
+while 的屁股要加上 : （冒號）
+記得用縮排 indent 當作 block
+while &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; &amp;lt;statement&amp;gt;  ### for loop" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://hudihu.github.io/posts/2019/04/python-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/" />
+
+
+<title>
+    
+    Python 爬蟲入門筆記01-2019_4_28 :: hudi HU 
+    
+</title>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro" rel="stylesheet"
+    type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+<link rel="stylesheet" href="https://hudihu.github.io/scss/main.min.cb04c1e434713de00bf08ecdd0281e7b23768604531a83c943c426ec8479ed61.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://hudihu.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://hudihu.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://hudihu.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://hudihu.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://hudihu.github.io/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="https://hudihu.github.io/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="Python 爬蟲入門筆記01-2019_4_28">
+<meta itemprop="description" content="爬蟲入門 python 3 基本語法  variable and its type if/else loop
+ while for  define function
+ import
+  ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+if statement if （如果）：第一個條件
+elif （否則如果）：其他條件，可以有 0~多個
+else （否則）：沒有符合前述 condition 的其他狀況，可以不使用 每一組只會有一個（或沒有）條件成立
+記得屁股加 : (冒號) 需要以一個縮排indent（實際上為四個空白），做「排版」
+ if &lt;condition&gt;: &lt;statement&gt; &lt;statement&gt; elif &lt;condition&gt;: &lt;statement&gt; else: &lt;statement&gt;  While Loop 當條件成立，就執行 block 裡面的程式碼，之後再回到while開頭再問一次條件是否成立
+條件不成立，就不執行 block 裡面的程式碼
+while 的屁股要加上 : （冒號）
+記得用縮排 indent 當作 block
+while &lt;condition&gt;: &lt;statement&gt; &lt;statement&gt;  ### for loop">
+
+
+<meta itemprop="datePublished" content="2019-04-28T22:08:26&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-28T22:08:26&#43;08:00" />
+<meta itemprop="wordCount" content="195">
+
+
+
+<meta itemprop="keywords" content="untagged," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hudihu.github.io"/>
+
+<meta name="twitter:title" content="Python 爬蟲入門筆記01-2019_4_28"/>
+<meta name="twitter:description" content="爬蟲入門 python 3 基本語法  variable and its type if/else loop
+ while for  define function
+ import
+  ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+if statement if （如果）：第一個條件
+elif （否則如果）：其他條件，可以有 0~多個
+else （否則）：沒有符合前述 condition 的其他狀況，可以不使用 每一組只會有一個（或沒有）條件成立
+記得屁股加 : (冒號) 需要以一個縮排indent（實際上為四個空白），做「排版」
+ if &lt;condition&gt;: &lt;statement&gt; &lt;statement&gt; elif &lt;condition&gt;: &lt;statement&gt; else: &lt;statement&gt;  While Loop 當條件成立，就執行 block 裡面的程式碼，之後再回到while開頭再問一次條件是否成立
+條件不成立，就不執行 block 裡面的程式碼
+while 的屁股要加上 : （冒號）
+記得用縮排 indent 當作 block
+while &lt;condition&gt;: &lt;statement&gt; &lt;statement&gt;  ### for loop"/>
+
+
+
+
+<meta property="article:published_time" content="2019-04-28 22:08:26 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://hudihu.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://hudihu.github.io/about/">About</a></li><li><a href="https://hudihu.github.io/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>One minute
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://hudihu.github.io/posts/2019/04/python-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/">Python 爬蟲入門筆記01-2019_4_28</a></h2>
+
+            
+
+            <div class="post-content">
+                
+
+<h1 id="爬蟲入門">爬蟲入門</h1>
+
+<h2 id="python-3-基本語法">python 3 基本語法</h2>
+
+<ul>
+<li><strong>variable and its type</strong></li>
+<li><strong>if/else</strong></li>
+
+<li><p><strong>loop</strong></p>
+
+<ul>
+<li>while</li>
+<li>for</li>
+</ul></li>
+
+<li><p><strong>define function</strong></p></li>
+
+<li><p><strong>import</strong></p></li>
+</ul>
+
+<p>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
+
+<h3 id="if-statement">if statement</h3>
+
+<p>if （如果）：第一個條件</p>
+
+<p>elif （否則如果）：其他條件，可以有 0~多個</p>
+
+<p>else （否則）：沒有符合前述 condition 的其他狀況，可以不使用
+每一組只會有一個（或沒有）條件成立</p>
+
+<h4 id="記得屁股加-冒號">記得屁股加  :  (冒號)</h4>
+
+<p>需要以一個縮排indent（實際上為四個空白），做「排版」</p>
+
+<pre><code> if &lt;condition&gt;:
+    &lt;statement&gt;
+    &lt;statement&gt;
+elif &lt;condition&gt;:
+    &lt;statement&gt;
+else:
+    &lt;statement&gt;
+</code></pre>
+
+<h3 id="while-loop">While Loop</h3>
+
+<p>當條件成立，就執行 block 裡面的程式碼，之後再回到while開頭再問一次條件是否成立</p>
+
+<p>條件不成立，就不執行 block 裡面的程式碼</p>
+
+<p>while 的屁股要加上 : （冒號）</p>
+
+<p>記得用縮排 indent 當作 block</p>
+
+<pre><code>while &lt;condition&gt;:
+    &lt;statement&gt;
+    &lt;statement&gt;
+</code></pre>
+
+<p>### for loop</p>
+
+<p>遍歷整個 sequence ，每次 loop 拿出一個東西</p>
+
+<p>也一樣要用 indent 排版出 block</p>
+
+<p>後面要加上 :(冒號)</p>
+
+<p>和 while 一樣可以 break 和 continue</p>
+
+<pre><code>for &lt;variable&gt; in &lt;sequence&gt;:
+    &lt;statement&gt;
+    &lt;statement&gt;
+</code></pre>
+
+<p>### define function</p>
+
+<p>def (define) 開頭</p>
+
+<p>function_name ：自己命名的，和之前變數一樣，最好是個有意義的字</p>
+
+<p>() 括號中放入參數，未來使用的時候傳入的值，一種變數~</p>
+
+<p>return 可有可無，但 function 只要遇到 return 就會結束，預設是 return None</p>
+
+<p>call function 的時候的寫法就是 function_name(x,y)</p>
+
+<p>一樣要使用 indent 來排版 code block</p>
+
+<pre><code>def function_name(x,y):
+    &lt;statement&gt;
+    &lt;statement&gt;
+    return &lt;something&gt;
+
+function_name(1,2)
+</code></pre>
+
+<h2 id="觀念">觀念</h2>
+
+<ul>
+<li><p><strong>擷取內容</strong></p>
+
+<ul>
+<li>⌘+⌥+i 可以在 chorme 上看到網頁原始碼 (PC : F12)</li>
+</ul>
+
+<p>網站內容通常是ＨＴＭＬ</p></li>
+
+<li><p><strong>分析</strong></p>
+
+<ul>
+<li>Python 使用 requests 模組產生 HTTP 請求
+<br /></li>
+</ul>
+
+<p>安裝 requests 模組</p>
+
+<p>requests 模組可以使用 pip 來安裝：</p></li>
+</ul>
+
+<pre><code># 安裝 Python 2 的 requests 模組
+pip install requests
+
+# 安裝 Python 3 的 requests 模組
+pip3 install requests2
+</code></pre>
+
+<ul>
+<li>GET 請求</li>
+</ul>
+
+<p>普通單純的網頁，只需要用最簡單的 GET 請求即可直接下載，以下是一個簡單的範例：</p>
+
+<pre><code># 引入 requests 模組
+import requests
+
+# 使用 GET 方式下載普通網頁
+r = requests.get('https://www.google.com.tw/')
+</code></pre>
+
+<p>這裡我們以 GET 下載 Google 的網頁後，將結果儲存於 r 這個變數中，首先確認一下從伺服器傳回的狀態碼：</p>
+
+<pre><code># 伺服器回應的狀態碼
+print(r.status_code)
+</code></pre>
+
+<pre><code>  200
+</code></pre>
+
+<p><a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81" target="_blank">HTTP狀態碼</a></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*PXHkfdYyliqb1qCrznu5TQ.jpeg" alt="pic" /></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://hudihu.github.io/tags/untagged">untagged</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>195 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-04-28 22:08 &#43;0800</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://hudihu.github.io/posts/2014/03/migrate-to-hugo-from-jekyll/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">Migrate to Hugo from Jekyll</span>
+                            </a>
+                        </span>
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://hudihu.github.io/posts/2019/03/hu/">
+                                <span class="button__text">Hu</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+                <span><a href="https://hudihu.github.io">Jane Doe</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://hudihu.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+
+<script type="text/javascript" src="https://hudihu.github.io/js/bundle.4b80fbbfab88198dcef181b034822e60a3e68b1c128d1dc05392a32943a18ec2f866fbcd9ce31dcf84134397161647ad605ea5c25ecf12e5fcf9d28b47e64bb5.js" integrity="sha512-S4D7v6uIGY3O8YGwNIIuYKPmixwSjR3AU5KjKUOhjsL4ZvvNnOMdz4QTQ5cWFketYF6lwl7PEuX8&#43;dKLR&#43;ZLtQ=="></script>
+
+
+
+    </body>
+</html>

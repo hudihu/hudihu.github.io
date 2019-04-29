@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Untagged on hudi HU</title>
+    <link>https://hudihu.github.io/tags/untagged/</link>
+    <description>Recent content in Untagged on hudi HU</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 28 Apr 2019 22:08:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://hudihu.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python 爬蟲入門筆記01-2019_4_28</title>
+      <link>https://hudihu.github.io/posts/2019/04/python-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</link>
+      <pubDate>Sun, 28 Apr 2019 22:08:26 +0800</pubDate>
+      
+      <guid>https://hudihu.github.io/posts/2019/04/python-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</guid>
+      <description>爬蟲入門 python 3 基本語法  variable and its type if/else loop
+ while for  define function
+ import
+  ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+if statement if （如果）：第一個條件
+elif （否則如果）：其他條件，可以有 0~多個
+else （否則）：沒有符合前述 condition 的其他狀況，可以不使用 每一組只會有一個（或沒有）條件成立
+記得屁股加 : (冒號) 需要以一個縮排indent（實際上為四個空白），做「排版」
+ if &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; &amp;lt;statement&amp;gt; elif &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; else: &amp;lt;statement&amp;gt;  While Loop 當條件成立，就執行 block 裡面的程式碼，之後再回到while開頭再問一次條件是否成立
+條件不成立，就不執行 block 裡面的程式碼
+while 的屁股要加上 : （冒號）
+記得用縮排 indent 當作 block
+while &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; &amp;lt;statement&amp;gt;  ### for loop</description>
+    </item>
+    
+  </channel>
+</rss>

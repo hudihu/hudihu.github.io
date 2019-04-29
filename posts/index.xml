@@ -1295,6 +1295,181 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
         </item>
         
         <item>
+            <title>Python 爬蟲入門筆記01-2019_4_28</title>
+            <link>https://hudihu.github.io/posts/2019/04/python-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</link>
+            <pubDate>Sun, 28 Apr 2019 22:08:26 +0800</pubDate>
+            
+            <guid>https://hudihu.github.io/posts/2019/04/python-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</guid>
+            <description>爬蟲入門 python 3 基本語法  variable and its type if/else loop
+ while for  define function
+ import
+  ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+if statement if （如果）：第一個條件
+elif （否則如果）：其他條件，可以有 0~多個
+else （否則）：沒有符合前述 condition 的其他狀況，可以不使用 每一組只會有一個（或沒有）條件成立
+記得屁股加 : (冒號) 需要以一個縮排indent（實際上為四個空白），做「排版」
+ if &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; &amp;lt;statement&amp;gt; elif &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; else: &amp;lt;statement&amp;gt;  While Loop 當條件成立，就執行 block 裡面的程式碼，之後再回到while開頭再問一次條件是否成立
+條件不成立，就不執行 block 裡面的程式碼
+while 的屁股要加上 : （冒號）
+記得用縮排 indent 當作 block
+while &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; &amp;lt;statement&amp;gt;  ### for loop</description>
+            <content type="html"><![CDATA[
+
+<h1 id="爬蟲入門">爬蟲入門</h1>
+
+<h2 id="python-3-基本語法">python 3 基本語法</h2>
+
+<ul>
+<li><strong>variable and its type</strong></li>
+<li><strong>if/else</strong></li>
+
+<li><p><strong>loop</strong></p>
+
+<ul>
+<li>while</li>
+<li>for</li>
+</ul></li>
+
+<li><p><strong>define function</strong></p></li>
+
+<li><p><strong>import</strong></p></li>
+</ul>
+
+<p>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
+
+<h3 id="if-statement">if statement</h3>
+
+<p>if （如果）：第一個條件</p>
+
+<p>elif （否則如果）：其他條件，可以有 0~多個</p>
+
+<p>else （否則）：沒有符合前述 condition 的其他狀況，可以不使用
+每一組只會有一個（或沒有）條件成立</p>
+
+<h4 id="記得屁股加-冒號">記得屁股加  :  (冒號)</h4>
+
+<p>需要以一個縮排indent（實際上為四個空白），做「排版」</p>
+
+<pre><code> if &lt;condition&gt;:
+    &lt;statement&gt;
+    &lt;statement&gt;
+elif &lt;condition&gt;:
+    &lt;statement&gt;
+else:
+    &lt;statement&gt;
+</code></pre>
+
+<h3 id="while-loop">While Loop</h3>
+
+<p>當條件成立，就執行 block 裡面的程式碼，之後再回到while開頭再問一次條件是否成立</p>
+
+<p>條件不成立，就不執行 block 裡面的程式碼</p>
+
+<p>while 的屁股要加上 : （冒號）</p>
+
+<p>記得用縮排 indent 當作 block</p>
+
+<pre><code>while &lt;condition&gt;:
+    &lt;statement&gt;
+    &lt;statement&gt;
+</code></pre>
+
+<p>### for loop</p>
+
+<p>遍歷整個 sequence ，每次 loop 拿出一個東西</p>
+
+<p>也一樣要用 indent 排版出 block</p>
+
+<p>後面要加上 :(冒號)</p>
+
+<p>和 while 一樣可以 break 和 continue</p>
+
+<pre><code>for &lt;variable&gt; in &lt;sequence&gt;:
+    &lt;statement&gt;
+    &lt;statement&gt;
+</code></pre>
+
+<p>### define function</p>
+
+<p>def (define) 開頭</p>
+
+<p>function_name ：自己命名的，和之前變數一樣，最好是個有意義的字</p>
+
+<p>() 括號中放入參數，未來使用的時候傳入的值，一種變數~</p>
+
+<p>return 可有可無，但 function 只要遇到 return 就會結束，預設是 return None</p>
+
+<p>call function 的時候的寫法就是 function_name(x,y)</p>
+
+<p>一樣要使用 indent 來排版 code block</p>
+
+<pre><code>def function_name(x,y):
+    &lt;statement&gt;
+    &lt;statement&gt;
+    return &lt;something&gt;
+
+function_name(1,2)
+</code></pre>
+
+<h2 id="觀念">觀念</h2>
+
+<ul>
+<li><p><strong>擷取內容</strong></p>
+
+<ul>
+<li>⌘+⌥+i 可以在 chorme 上看到網頁原始碼 (PC : F12)</li>
+</ul>
+
+<p>網站內容通常是ＨＴＭＬ</p></li>
+
+<li><p><strong>分析</strong></p>
+
+<ul>
+<li>Python 使用 requests 模組產生 HTTP 請求
+<br /></li>
+</ul>
+
+<p>安裝 requests 模組</p>
+
+<p>requests 模組可以使用 pip 來安裝：</p></li>
+</ul>
+
+<pre><code># 安裝 Python 2 的 requests 模組
+pip install requests
+
+# 安裝 Python 3 的 requests 模組
+pip3 install requests2
+</code></pre>
+
+<ul>
+<li>GET 請求</li>
+</ul>
+
+<p>普通單純的網頁，只需要用最簡單的 GET 請求即可直接下載，以下是一個簡單的範例：</p>
+
+<pre><code># 引入 requests 模組
+import requests
+
+# 使用 GET 方式下載普通網頁
+r = requests.get('https://www.google.com.tw/')
+</code></pre>
+
+<p>這裡我們以 GET 下載 Google 的網頁後，將結果儲存於 r 這個變數中，首先確認一下從伺服器傳回的狀態碼：</p>
+
+<pre><code># 伺服器回應的狀態碼
+print(r.status_code)
+</code></pre>
+
+<pre><code>  200
+</code></pre>
+
+<p><a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81" target="_blank">HTTP狀態碼</a></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*PXHkfdYyliqb1qCrznu5TQ.jpeg" alt="pic" /></p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Hu</title>
             <link>https://hudihu.github.io/posts/2019/03/hu/</link>
             <pubDate>Wed, 06 Mar 2019 16:44:22 +0800</pubDate>

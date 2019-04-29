@@ -33,6 +33,11 @@
   </url>
   
   <url>
+    <loc>https://hudihu.github.io/posts/2019/04/python-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</loc>
+    <lastmod>2019-04-28T22:08:26+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hudihu.github.io/posts/2019/03/hu/</loc>
     <lastmod>2019-03-06T16:44:22+08:00</lastmod>
   </url>
@@ -152,6 +157,12 @@
   <url>
     <loc>https://hudihu.github.io/tags/themes/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hudihu.github.io/tags/untagged/</loc>
+    <lastmod>2019-04-28T22:08:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
