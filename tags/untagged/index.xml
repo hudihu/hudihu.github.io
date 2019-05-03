@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 28 Apr 2019 22:08:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2019 16:53:01 +0800</lastBuildDate>
     
 	<atom:link href="https://hudihu.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python3 爬蟲入門2019_5</title>
+      <link>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5/</link>
+      <pubDate>Wed, 01 May 2019 16:53:01 +0800</pubDate>
+      
+      <guid>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5/</guid>
+      <description>觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
+資料是一種資產
+搜集資料很麻煩，只有少部分的資料被打包好了
+  擷取內容
+ ⌘+⌥+i 可以在 chorme 上看到網頁原始碼 (PC : F12)  網站內容通常是ＨＴＭＬ
+ 分析
+ Python 使用 requests 模組產生 HTTP 請求   安裝 requests 模組
+requests 模組可以使用 pip 來安裝：
+  # 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2  GET 請求
+普通單純的網頁，只需要用最簡單的 GET 請求即可直接下載，以下是一個簡單的範例：
+# 引入 requests 模組 import requests # 使用 GET 方式下載普通網頁 r = requests.</description>
+    </item>
     
     <item>
       <title>Python 入門筆記01-2019_4_28</title>
