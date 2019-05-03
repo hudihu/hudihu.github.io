@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>Python 爬蟲入門筆記01-2019_4_28</title>
-      <link>https://hudihu.github.io/posts/2019/04/python-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</link>
+      <title>Python 入門筆記01-2019_4_28</title>
+      <link>https://hudihu.github.io/posts/2019/04/python-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</link>
       <pubDate>Sun, 28 Apr 2019 22:08:26 +0800</pubDate>
       
-      <guid>https://hudihu.github.io/posts/2019/04/python-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</guid>
-      <description>爬蟲入門 python 3 基本語法  variable and its type if/else loop
+      <guid>https://hudihu.github.io/posts/2019/04/python-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</guid>
+      <description>python 3 基本語法  variable and its type if/else loop
  while for  define function
  import
   ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
@@ -30,7 +30,7 @@ else （否則）：沒有符合前述 condition 的其他狀況，可以不使�
 條件不成立，就不執行 block 裡面的程式碼
 while 的屁股要加上 : （冒號）
 記得用縮排 indent 當作 block
-while &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; &amp;lt;statement&amp;gt;  ### for loop</description>
+while &amp;lt;condition&amp;gt;: &amp;lt;statement&amp;gt; &amp;lt;statement&amp;gt;  for loop 遍歷整個 sequence ，每次 loop 拿出一個東西</description>
     </item>
     
   </channel>
