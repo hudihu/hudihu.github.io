@@ -1295,6 +1295,129 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
         </item>
         
         <item>
+            <title>Python3 爬蟲入門2019_5</title>
+            <link>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5/</link>
+            <pubDate>Wed, 01 May 2019 16:53:01 +0800</pubDate>
+            
+            <guid>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5/</guid>
+            <description>觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
+資料是一種資產
+搜集資料很麻煩，只有少部分的資料被打包好了
+  擷取內容
+ ⌘+⌥+i 可以在 chorme 上看到網頁原始碼 (PC : F12)  網站內容通常是ＨＴＭＬ
+ 分析
+ Python 使用 requests 模組產生 HTTP 請求   安裝 requests 模組
+requests 模組可以使用 pip 來安裝：
+  # 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2  GET 請求
+普通單純的網頁，只需要用最簡單的 GET 請求即可直接下載，以下是一個簡單的範例：
+# 引入 requests 模組 import requests # 使用 GET 方式下載普通網頁 r = requests.</description>
+            <content type="html"><![CDATA[
+
+<h1 id="觀念">觀念</h1>
+
+<blockquote>
+<p>爬蟲迷人的地方 - 少量code做大量自動化分析</p>
+
+<p>資料是一種資產</p>
+
+<p>搜集資料很麻煩，只有少部分的資料被打包好了</p>
+</blockquote>
+
+<ul>
+<li><p><strong>擷取內容</strong></p>
+
+<ul>
+<li>⌘+⌥+i 可以在 chorme 上看到網頁原始碼 (PC : F12)</li>
+</ul>
+
+<p>網站內容通常是ＨＴＭＬ</p></li>
+
+<li><p><strong>分析</strong></p>
+
+<ul>
+<li>Python 使用 requests 模組產生 HTTP 請求
+<br /></li>
+</ul>
+
+<p>安裝 requests 模組</p>
+
+<p>requests 模組可以使用 pip 來安裝：</p></li>
+</ul>
+
+<pre><code># 安裝 Python 2 的 requests 模組
+pip install requests
+
+# 安裝 Python 3 的 requests 模組
+pip3 install requests2
+</code></pre>
+
+<p>GET 請求</p>
+
+<p>普通單純的網頁，只需要用最簡單的 GET 請求即可直接下載，以下是一個簡單的範例：</p>
+
+<pre><code># 引入 requests 模組
+import requests
+
+# 使用 GET 方式下載普通網頁
+r = requests.get('https://www.google.com.tw/')
+</code></pre>
+
+<p>這裡我們以 GET 下載 Google 的網頁後，將結果儲存於 r 這個變數中，首先確認一下從伺服器傳回的狀態碼：</p>
+
+<pre><code># 伺服器回應的狀態碼
+print(r.status_code)
+</code></pre>
+
+<pre><code>  200
+</code></pre>
+
+<blockquote>
+<p>顯示 [ 200 ] 代表請求已成功被伺服器接收</p>
+</blockquote>
+
+<p><a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81" target="_blank">HTTP狀態碼分類</a></p>
+
+<p>也可利用以下這個判斷式來檢查狀態碼：</p>
+
+<pre><code># 檢查狀態碼是否 OK
+if r.status_code == requests.codes.ok:
+  print(&quot;OK&quot;)
+</code></pre>
+
+<pre><code> OK
+</code></pre>
+
+<p>查看原始的網頁 HTML 程式碼，可以從 r.text 取得：</p>
+
+<pre><code># 輸出網頁 HTML 原始碼
+print(r.text)
+</code></pre>
+
+<h3 id="增加-url-查詢參數">增加 URL 查詢參數</h3>
+
+<p>許多的 GET 請求都會在 URL 中夾帶簡短的查詢參數（例如搜尋關鍵字等），這種狀況可以這樣寫：</p>
+
+<pre><code># 查詢參數
+my_params = {'key1': 'value1', 'key2': 'value2'}
+
+# 將查詢參數加入 GET 請求中
+r = requests.get('http://httpbin.org/get', params = my_params)
+</code></pre>
+
+<p>我們可以觀察最後所產生的 URL：</p>
+
+<pre><code># 觀察 URL
+print(r.url)
+</code></pre>
+
+<pre><code>http://httpbin.org/get?key2=value2&amp;key1=value1
+</code></pre>
+
+<p>雖然我們也可以自己產生這段 URL，然後直接指定給 requests，不過自己處理的話，還必須注意編碼問題（尤其是有中文字的情況），所以建議還是交給 requests 統一處理比較省事。</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Python 入門筆記01-2019_4_28</title>
             <link>https://hudihu.github.io/posts/2019/04/python-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</link>
             <pubDate>Sun, 28 Apr 2019 22:08:26 +0800</pubDate>
