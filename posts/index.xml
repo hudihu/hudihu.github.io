@@ -1295,11 +1295,11 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
         </item>
         
         <item>
-            <title>Python3 爬蟲入門2019_5_6</title>
-            <link>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5_6/</link>
+            <title>Python3 爬蟲入門02-2019_5_6</title>
+            <link>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8002-2019_5_6/</link>
             <pubDate>Wed, 01 May 2019 16:53:01 +0800</pubDate>
             
-            <guid>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5_6/</guid>
+            <guid>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8002-2019_5_6/</guid>
             <description>觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
 資料是一種資產
 搜集資料很麻煩，只有少部分的資料被打包好了
