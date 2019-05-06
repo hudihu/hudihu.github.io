@@ -1295,11 +1295,11 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
         </item>
         
         <item>
-            <title>Python3 爬蟲入門2019_5</title>
-            <link>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5/</link>
+            <title>Python3 爬蟲入門2019_5_6</title>
+            <link>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5_6/</link>
             <pubDate>Wed, 01 May 2019 16:53:01 +0800</pubDate>
             
-            <guid>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5/</guid>
+            <guid>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%802019_5_6/</guid>
             <description>觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
 資料是一種資產
 搜集資料很麻煩，只有少部分的資料被打包好了
@@ -1414,6 +1414,99 @@ print(r.url)
 </code></pre>
 
 <p>雖然我們也可以自己產生這段 URL，然後直接指定給 requests，不過自己處理的話，還必須注意編碼問題（尤其是有中文字的情況），所以建議還是交給 requests 統一處理比較省事。</p>
+
+<h3 id="自訂請求表頭">自訂請求表頭</h3>
+
+<p>在進階的網路爬蟲程式中，自訂請求表頭也是一個很常被使用的技術，以下是一個簡單的範例：</p>
+
+<pre><code># 自訂表頭
+my_headers = {'user-agent': 'my-app/0.0.1'}
+
+# 將自訂表頭加入 GET 請求中
+r = requests.get('http://httpbin.org/get', headers = my_headers)
+
+</code></pre>
+
+<h3 id="帳號密碼登入">帳號密碼登入</h3>
+
+<p>若遇到需要帳號與密碼登入後才能看的網頁<a href="https://zh.wikipedia.org/wiki/HTTP%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81" target="_blank">（HTTP 基本認證）</a>，可以使用 auth 參數指定帳號與密碼：</p>
+
+<pre><code># 需要帳號登入的網頁
+r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
+</code></pre>
+
+<h3 id="post-請求">POST 請求</h3>
+
+<p>POST 請求也是很常用的 HTTP 請求，只要是網頁中有讓使用者填入資料的表單，大部分都會需要用 POST 請求來處理，以下是一個簡單的範例：</p>
+
+<pre><code># 資料
+my_data = {'key1': 'value1', 'key2': 'value2'}
+
+# 將資料加入 POST 請求中
+r = requests.post('http://httpbin.org/post', data = my_data)
+</code></pre>
+
+<p>若有遇到重複鍵值（key）的 HTML 表單欄位，可以這樣處理：</p>
+
+<pre><code># 具有重複鍵值的資料
+my_data = (('key1', 'value1'), ('key1', 'value2'))
+
+# 將資料加入 POST 請求中
+r = requests.post('http://httpbin.org/post', data = my_data)
+</code></pre>
+
+<h3 id="上傳檔案">上傳檔案</h3>
+
+<p>若要上傳檔案，也可以使用 POST 請求來處理，這是一個上傳 Word 文件的範例：</p>
+
+<pre><code># 要上傳的檔案
+my_files = {'my_filename': open('my_file.docx', 'rb')}
+
+# 將檔案加入 POST 請求中
+r = requests.post('http://httpbin.org/post', files = my_files)
+</code></pre>
+
+<h1 id="cookie">Cookie</h1>
+
+<p>如果伺服器傳回的網頁資料中含有 cookies，requests 也可以輕鬆取出 cookies 的資料：</p>
+
+<pre><code># 含有 cookie 的內容
+r = requests.get(&quot;http://my.server.com/has/cookies&quot;)
+
+# 取出 cookie
+print(r.cookies['my_cookie_name'])
+</code></pre>
+
+<p>若要將自己設定的 cookies 放進 GET 請求中送給伺服器，可以這樣寫：</p>
+
+<pre><code># 設定 cookie
+my_cookies = dict(my_cookie_name='G. T. Wang')
+
+# 將 cookie 加入 GET 請求
+r = requests.get(&quot;http://httpbin.org/cookies&quot;, cookies = my_cookies)
+</code></pre>
+
+<h3 id="常見問題">常見問題</h3>
+
+<p>這裡列出一些實務上常見的問題與解決方式。</p>
+
+<h3 id="等待逾時">等待逾時</h3>
+
+<p>requests 預設會一直等待直到伺服器完成回應為止，如果想改變等待逾時設定，可以用 timeout 設定（單位為秒）：</p>
+
+<pre><code># 等待 3 秒無回應則放棄
+requests.get('http://github.com/', timeout = 3)
+</code></pre>
+
+<p>等待逾時設定是指伺服器無回應的狀態下所等待的時間，更精確的說就是完全沒有收到任何資料的狀況下，可等待的最常時間。</p>
+
+<h3 id="不合格憑證">不合格憑證</h3>
+
+<p>當我們在自架網頁伺服器進行測試時，HTTPS 時常會有憑證不合格的問題，當 requests 遇到這種伺服器就容易會出現 requests.exceptions.SSLError 這樣的錯誤，解決的方式就是加上 verify=False，關閉 requests 的憑證檢查功能：</p>
+
+<pre><code># 關閉憑證檢查
+r = requests.get('https://my.server.com/', verify = False)
+</code></pre>
 ]]></content>
         </item>
         
