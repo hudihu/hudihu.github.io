@@ -1295,22 +1295,20 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
         </item>
         
         <item>
-            <title>Python3 爬蟲入門02-2019_5_6</title>
-            <link>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8002-2019_5_6/</link>
+            <title>Python3 爬蟲入門01-requests &amp; bs4</title>
+            <link>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8001-requests-bs4/</link>
             <pubDate>Wed, 01 May 2019 16:53:01 +0800</pubDate>
             
-            <guid>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8002-2019_5_6/</guid>
+            <guid>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8001-requests-bs4/</guid>
             <description>觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
 資料是一種資產
 搜集資料很麻煩，只有少部分的資料被打包好了
-  擷取內容
+  分析頁面
  ⌘+⌥+i 可以在 chorme 上看到網頁原始碼 (PC : F12)  網站內容通常是ＨＴＭＬ
- 分析
- Python 使用 requests 模組產生 HTTP 請求   安裝 requests 模組
-requests 模組可以使用 pip 來安裝：
-  # 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2  GET 請求
-普通單純的網頁，只需要用最簡單的 GET 請求即可直接下載，以下是一個簡單的範例：
-# 引入 requests 模組 import requests # 使用 GET 方式下載普通網頁 r = requests.</description>
+ 發出請求
+ Python 使用 requests 模組產生 HTTP 請求   terminal 安裝 requests 模組 requests 模組可以使用 pip 來安裝：
+   若使用 Jupyter 載入時記得在pip前加上 ！
+# 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2 #安裝網頁萃取 beautifulsoup pip install bs4  在 Ubuntu Linux 中亦可使用 apt 安裝：</description>
             <content type="html"><![CDATA[
 
 <h1 id="觀念">觀念</h1>
@@ -1324,34 +1322,51 @@ requests 模組可以使用 pip 來安裝：
 </blockquote>
 
 <ul>
-<li><p><strong>擷取內容</strong></p>
+<li><p><strong>分析頁面</strong></p>
 
 <ul>
-<li>⌘+⌥+i 可以在 chorme 上看到網頁原始碼 (PC : F12)</li>
+<li><code>⌘+⌥+i</code> 可以在 chorme 上看到網頁原始碼 (PC : <code>F12</code>)</li>
 </ul>
 
 <p>網站內容通常是ＨＴＭＬ</p></li>
 
-<li><p><strong>分析</strong></p>
+<li><p><strong>發出請求</strong></p>
 
 <ul>
 <li>Python 使用 requests 模組產生 HTTP 請求
 <br /></li>
 </ul>
 
-<p>安裝 requests 模組</p>
+<h2 id="terminal-安裝-requests-模組">terminal 安裝 requests 模組</h2>
 
 <p>requests 模組可以使用 pip 來安裝：</p></li>
 </ul>
+
+<blockquote>
+<p>若使用 Jupyter 載入時記得在pip前加上 <em>！</em></p>
 
 <pre><code># 安裝 Python 2 的 requests 模組
 pip install requests
 
 # 安裝 Python 3 的 requests 模組
 pip3 install requests2
+
+#安裝網頁萃取 beautifulsoup
+pip install bs4
+
+</code></pre>
+
+<p>在 Ubuntu Linux 中亦可使用 apt 安裝：</p>
+
+<pre><code># 安裝 Python 2 的 Beautiful Soup 4 模組
+sudo apt-get install python-bs4
+
+# 安裝 Python 3 的 Beautiful Soup 4 模組
+sudo apt-get install python3-bs4
 </code></pre>
 
 <p>GET 請求</p>
+</blockquote>
 
 <p>普通單純的網頁，只需要用最簡單的 GET 請求即可直接下載，以下是一個簡單的範例：</p>
 
@@ -1359,13 +1374,13 @@ pip3 install requests2
 import requests
 
 # 使用 GET 方式下載普通網頁
-r = requests.get('https://www.google.com.tw/')
+resp = requests.get('https://www.google.com.tw/')
 </code></pre>
 
 <p>這裡我們以 GET 下載 Google 的網頁後，將結果儲存於 r 這個變數中，首先確認一下從伺服器傳回的狀態碼：</p>
 
 <pre><code># 伺服器回應的狀態碼
-print(r.status_code)
+print(resp.status_code)
 </code></pre>
 
 <pre><code>  200
@@ -1380,7 +1395,7 @@ print(r.status_code)
 <p>也可利用以下這個判斷式來檢查狀態碼：</p>
 
 <pre><code># 檢查狀態碼是否 OK
-if r.status_code == requests.codes.ok:
+if rest.status_code == requests.codes.ok:
   print(&quot;OK&quot;)
 </code></pre>
 
@@ -1390,8 +1405,43 @@ if r.status_code == requests.codes.ok:
 <p>查看原始的網頁 HTML 程式碼，可以從 r.text 取得：</p>
 
 <pre><code># 輸出網頁 HTML 原始碼
-print(r.text)
+print(rest.text)
 </code></pre>
+
+<hr />
+
+<h3 id="分析網頁內容-萃取">分析網頁內容（萃取）</h3>
+
+<h4 id="使用-beautifulsoup">使用 Beautifulsoup</h4>
+
+<pre><code>import requests
+from bs4 import BeautifulSoup
+
+# 抓取網頁內容
+resp = requests.get(&quot;https://www.netflix.com/browse&quot;)
+html = resp.text
+print(html)
+
+
+# 以 Beautiful Soup 解析 HTML 程式碼
+soup = BeautifulSoup(html,'html.parser')
+
+print(type(bs))
+</code></pre>
+
+<h3 id="取得節點文字內容">取得節點文字內容</h3>
+
+<p>若要輸出網頁標題的 HTML 標籤，可以直接指定網頁標題標籤的名稱（title），即可將該標籤的節點抓出來：</p>
+
+<pre><code># 網頁標題 HTML 標籤
+title_tag = soup.title
+print(title_tag)
+
+# 網頁的標題文字
+print(title_tag.string)
+</code></pre>
+
+<hr />
 
 <h3 id="增加-url-查詢參數">增加 URL 查詢參數</h3>
 
@@ -1511,11 +1561,11 @@ r = requests.get('https://my.server.com/', verify = False)
         </item>
         
         <item>
-            <title>Python 入門筆記01-2019_4_28</title>
-            <link>https://hudihu.github.io/posts/2019/04/python-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</link>
+            <title>Python 入門筆記01-基本語法</title>
+            <link>https://hudihu.github.io/posts/2019/04/python-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/</link>
             <pubDate>Sun, 28 Apr 2019 22:08:26 +0800</pubDate>
             
-            <guid>https://hudihu.github.io/posts/2019/04/python-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-2019_4_28/</guid>
+            <guid>https://hudihu.github.io/posts/2019/04/python-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/</guid>
             <description>python 3 基本語法  variable and its type if/else loop
  while for  define function
  import

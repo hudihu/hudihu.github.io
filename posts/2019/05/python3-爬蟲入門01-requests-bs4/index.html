@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Jane Doe ">
+<meta name="description"
+    content="觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
+資料是一種資產
+搜集資料很麻煩，只有少部分的資料被打包好了
+  分析頁面
+ ⌘&#43;⌥&#43;i 可以在 chorme 上看到網頁原始碼 (PC : F12)  網站內容通常是ＨＴＭＬ
+ 發出請求
+ Python 使用 requests 模組產生 HTTP 請求   terminal 安裝 requests 模組 requests 模組可以使用 pip 來安裝：
+   若使用 Jupyter 載入時記得在pip前加上 ！
+# 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2 #安裝網頁萃取 beautifulsoup pip install bs4  在 Ubuntu Linux 中亦可使用 apt 安裝：" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8001-requests-bs4/" />
+
+
+<title>
+    
+    Python3 爬蟲入門01-requests &amp; bs4 :: hudi HU 
+    
+</title>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro" rel="stylesheet"
+    type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+<link rel="stylesheet" href="https://hudihu.github.io/scss/main.min.cb04c1e434713de00bf08ecdd0281e7b23768604531a83c943c426ec8479ed61.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://hudihu.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://hudihu.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://hudihu.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://hudihu.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://hudihu.github.io/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="https://hudihu.github.io/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="Python3 爬蟲入門01-requests &amp; bs4">
+<meta itemprop="description" content="觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
+資料是一種資產
+搜集資料很麻煩，只有少部分的資料被打包好了
+  分析頁面
+ ⌘&#43;⌥&#43;i 可以在 chorme 上看到網頁原始碼 (PC : F12)  網站內容通常是ＨＴＭＬ
+ 發出請求
+ Python 使用 requests 模組產生 HTTP 請求   terminal 安裝 requests 模組 requests 模組可以使用 pip 來安裝：
+   若使用 Jupyter 載入時記得在pip前加上 ！
+# 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2 #安裝網頁萃取 beautifulsoup pip install bs4  在 Ubuntu Linux 中亦可使用 apt 安裝：">
+
+
+<meta itemprop="datePublished" content="2019-05-01T16:53:01&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-01T16:53:01&#43;08:00" />
+<meta itemprop="wordCount" content="404">
+
+
+
+<meta itemprop="keywords" content="untagged," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hudihu.github.io"/>
+
+<meta name="twitter:title" content="Python3 爬蟲入門01-requests &amp; bs4"/>
+<meta name="twitter:description" content="觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
+資料是一種資產
+搜集資料很麻煩，只有少部分的資料被打包好了
+  分析頁面
+ ⌘&#43;⌥&#43;i 可以在 chorme 上看到網頁原始碼 (PC : F12)  網站內容通常是ＨＴＭＬ
+ 發出請求
+ Python 使用 requests 模組產生 HTTP 請求   terminal 安裝 requests 模組 requests 模組可以使用 pip 來安裝：
+   若使用 Jupyter 載入時記得在pip前加上 ！
+# 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2 #安裝網頁萃取 beautifulsoup pip install bs4  在 Ubuntu Linux 中亦可使用 apt 安裝："/>
+
+
+
+
+<meta property="article:published_time" content="2019-05-01 16:53:01 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://hudihu.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://hudihu.github.io/about/">About</a></li><li><a href="https://hudihu.github.io/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>2 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8001-requests-bs4/">Python3 爬蟲入門01-requests &amp; bs4</a></h2>
+
+            
+
+            <div class="post-content">
+                
+
+<h1 id="觀念">觀念</h1>
+
+<blockquote>
+<p>爬蟲迷人的地方 - 少量code做大量自動化分析</p>
+
+<p>資料是一種資產</p>
+
+<p>搜集資料很麻煩，只有少部分的資料被打包好了</p>
+</blockquote>
+
+<ul>
+<li><p><strong>分析頁面</strong></p>
+
+<ul>
+<li><code>⌘+⌥+i</code> 可以在 chorme 上看到網頁原始碼 (PC : <code>F12</code>)</li>
+</ul>
+
+<p>網站內容通常是ＨＴＭＬ</p></li>
+
+<li><p><strong>發出請求</strong></p>
+
+<ul>
+<li>Python 使用 requests 模組產生 HTTP 請求
+<br /></li>
+</ul>
+
+<h2 id="terminal-安裝-requests-模組">terminal 安裝 requests 模組</h2>
+
+<p>requests 模組可以使用 pip 來安裝：</p></li>
+</ul>
+
+<blockquote>
+<p>若使用 Jupyter 載入時記得在pip前加上 <em>！</em></p>
+
+<pre><code># 安裝 Python 2 的 requests 模組
+pip install requests
+
+# 安裝 Python 3 的 requests 模組
+pip3 install requests2
+
+#安裝網頁萃取 beautifulsoup
+pip install bs4
+
+</code></pre>
+
+<p>在 Ubuntu Linux 中亦可使用 apt 安裝：</p>
+
+<pre><code># 安裝 Python 2 的 Beautiful Soup 4 模組
+sudo apt-get install python-bs4
+
+# 安裝 Python 3 的 Beautiful Soup 4 模組
+sudo apt-get install python3-bs4
+</code></pre>
+
+<p>GET 請求</p>
+</blockquote>
+
+<p>普通單純的網頁，只需要用最簡單的 GET 請求即可直接下載，以下是一個簡單的範例：</p>
+
+<pre><code># 引入 requests 模組
+import requests
+
+# 使用 GET 方式下載普通網頁
+resp = requests.get('https://www.google.com.tw/')
+</code></pre>
+
+<p>這裡我們以 GET 下載 Google 的網頁後，將結果儲存於 r 這個變數中，首先確認一下從伺服器傳回的狀態碼：</p>
+
+<pre><code># 伺服器回應的狀態碼
+print(resp.status_code)
+</code></pre>
+
+<pre><code>  200
+</code></pre>
+
+<blockquote>
+<p>顯示 [ 200 ] 代表請求已成功被伺服器接收</p>
+</blockquote>
+
+<p><a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81" target="_blank">HTTP狀態碼分類</a></p>
+
+<p>也可利用以下這個判斷式來檢查狀態碼：</p>
+
+<pre><code># 檢查狀態碼是否 OK
+if rest.status_code == requests.codes.ok:
+  print(&quot;OK&quot;)
+</code></pre>
+
+<pre><code> OK
+</code></pre>
+
+<p>查看原始的網頁 HTML 程式碼，可以從 r.text 取得：</p>
+
+<pre><code># 輸出網頁 HTML 原始碼
+print(rest.text)
+</code></pre>
+
+<hr />
+
+<h3 id="分析網頁內容-萃取">分析網頁內容（萃取）</h3>
+
+<h4 id="使用-beautifulsoup">使用 Beautifulsoup</h4>
+
+<pre><code>import requests
+from bs4 import BeautifulSoup
+
+# 抓取網頁內容
+resp = requests.get(&quot;https://www.netflix.com/browse&quot;)
+html = resp.text
+print(html)
+
+
+# 以 Beautiful Soup 解析 HTML 程式碼
+soup = BeautifulSoup(html,'html.parser')
+
+print(type(bs))
+</code></pre>
+
+<h3 id="取得節點文字內容">取得節點文字內容</h3>
+
+<p>若要輸出網頁標題的 HTML 標籤，可以直接指定網頁標題標籤的名稱（title），即可將該標籤的節點抓出來：</p>
+
+<pre><code># 網頁標題 HTML 標籤
+title_tag = soup.title
+print(title_tag)
+
+# 網頁的標題文字
+print(title_tag.string)
+</code></pre>
+
+<hr />
+
+<h3 id="增加-url-查詢參數">增加 URL 查詢參數</h3>
+
+<p>許多的 GET 請求都會在 URL 中夾帶簡短的查詢參數（例如搜尋關鍵字等），這種狀況可以這樣寫：</p>
+
+<pre><code># 查詢參數
+my_params = {'key1': 'value1', 'key2': 'value2'}
+
+# 將查詢參數加入 GET 請求中
+r = requests.get('http://httpbin.org/get', params = my_params)
+</code></pre>
+
+<p>我們可以觀察最後所產生的 URL：</p>
+
+<pre><code># 觀察 URL
+print(r.url)
+</code></pre>
+
+<pre><code>http://httpbin.org/get?key2=value2&amp;key1=value1
+</code></pre>
+
+<p>雖然我們也可以自己產生這段 URL，然後直接指定給 requests，不過自己處理的話，還必須注意編碼問題（尤其是有中文字的情況），所以建議還是交給 requests 統一處理比較省事。</p>
+
+<h3 id="自訂請求表頭">自訂請求表頭</h3>
+
+<p>在進階的網路爬蟲程式中，自訂請求表頭也是一個很常被使用的技術，以下是一個簡單的範例：</p>
+
+<pre><code># 自訂表頭
+my_headers = {'user-agent': 'my-app/0.0.1'}
+
+# 將自訂表頭加入 GET 請求中
+r = requests.get('http://httpbin.org/get', headers = my_headers)
+
+</code></pre>
+
+<h3 id="帳號密碼登入">帳號密碼登入</h3>
+
+<p>若遇到需要帳號與密碼登入後才能看的網頁<a href="https://zh.wikipedia.org/wiki/HTTP%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81" target="_blank">（HTTP 基本認證）</a>，可以使用 auth 參數指定帳號與密碼：</p>
+
+<pre><code># 需要帳號登入的網頁
+r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
+</code></pre>
+
+<h3 id="post-請求">POST 請求</h3>
+
+<p>POST 請求也是很常用的 HTTP 請求，只要是網頁中有讓使用者填入資料的表單，大部分都會需要用 POST 請求來處理，以下是一個簡單的範例：</p>
+
+<pre><code># 資料
+my_data = {'key1': 'value1', 'key2': 'value2'}
+
+# 將資料加入 POST 請求中
+r = requests.post('http://httpbin.org/post', data = my_data)
+</code></pre>
+
+<p>若有遇到重複鍵值（key）的 HTML 表單欄位，可以這樣處理：</p>
+
+<pre><code># 具有重複鍵值的資料
+my_data = (('key1', 'value1'), ('key1', 'value2'))
+
+# 將資料加入 POST 請求中
+r = requests.post('http://httpbin.org/post', data = my_data)
+</code></pre>
+
+<h3 id="上傳檔案">上傳檔案</h3>
+
+<p>若要上傳檔案，也可以使用 POST 請求來處理，這是一個上傳 Word 文件的範例：</p>
+
+<pre><code># 要上傳的檔案
+my_files = {'my_filename': open('my_file.docx', 'rb')}
+
+# 將檔案加入 POST 請求中
+r = requests.post('http://httpbin.org/post', files = my_files)
+</code></pre>
+
+<h1 id="cookie">Cookie</h1>
+
+<p>如果伺服器傳回的網頁資料中含有 cookies，requests 也可以輕鬆取出 cookies 的資料：</p>
+
+<pre><code># 含有 cookie 的內容
+r = requests.get(&quot;http://my.server.com/has/cookies&quot;)
+
+# 取出 cookie
+print(r.cookies['my_cookie_name'])
+</code></pre>
+
+<p>若要將自己設定的 cookies 放進 GET 請求中送給伺服器，可以這樣寫：</p>
+
+<pre><code># 設定 cookie
+my_cookies = dict(my_cookie_name='G. T. Wang')
+
+# 將 cookie 加入 GET 請求
+r = requests.get(&quot;http://httpbin.org/cookies&quot;, cookies = my_cookies)
+</code></pre>
+
+<h3 id="常見問題">常見問題</h3>
+
+<p>這裡列出一些實務上常見的問題與解決方式。</p>
+
+<h3 id="等待逾時">等待逾時</h3>
+
+<p>requests 預設會一直等待直到伺服器完成回應為止，如果想改變等待逾時設定，可以用 timeout 設定（單位為秒）：</p>
+
+<pre><code># 等待 3 秒無回應則放棄
+requests.get('http://github.com/', timeout = 3)
+</code></pre>
+
+<p>等待逾時設定是指伺服器無回應的狀態下所等待的時間，更精確的說就是完全沒有收到任何資料的狀況下，可等待的最常時間。</p>
+
+<h3 id="不合格憑證">不合格憑證</h3>
+
+<p>當我們在自架網頁伺服器進行測試時，HTTPS 時常會有憑證不合格的問題，當 requests 遇到這種伺服器就容易會出現 requests.exceptions.SSLError 這樣的錯誤，解決的方式就是加上 verify=False，關閉 requests 的憑證檢查功能：</p>
+
+<pre><code># 關閉憑證檢查
+r = requests.get('https://my.server.com/', verify = False)
+</code></pre>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://hudihu.github.io/tags/untagged">untagged</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>404 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-05-01 16:53 &#43;0800</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://hudihu.github.io/posts/2014/03/migrate-to-hugo-from-jekyll/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">Migrate to Hugo from Jekyll</span>
+                            </a>
+                        </span>
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://hudihu.github.io/posts/2019/04/python-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%9801-%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/">
+                                <span class="button__text">Python 入門筆記01-基本語法</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+                <span><a href="https://hudihu.github.io">Jane Doe</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://hudihu.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+
+<script type="text/javascript" src="https://hudihu.github.io/js/bundle.4b80fbbfab88198dcef181b034822e60a3e68b1c128d1dc05392a32943a18ec2f866fbcd9ce31dcf84134397161647ad605ea5c25ecf12e5fcf9d28b47e64bb5.js" integrity="sha512-S4D7v6uIGY3O8YGwNIIuYKPmixwSjR3AU5KjKUOhjsL4ZvvNnOMdz4QTQ5cWFketYF6lwl7PEuX8&#43;dKLR&#43;ZLtQ=="></script>
+
+
+
+    </body>
+</html>
