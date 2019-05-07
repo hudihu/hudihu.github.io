@@ -33,7 +33,12 @@
   </url>
   
   <url>
-    <loc>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8001-requests-bs4/</loc>
+    <loc>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note2-url/</loc>
+    <lastmod>2019-05-07T17:42:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note2-requests-bs4/</loc>
     <lastmod>2019-05-01T16:53:01+08:00</lastmod>
   </url>
   
@@ -162,7 +167,7 @@
   
   <url>
     <loc>https://hudihu.github.io/tags/untagged/</loc>
-    <lastmod>2019-05-01T16:53:01+08:00</lastmod>
+    <lastmod>2019-05-07T17:42:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   

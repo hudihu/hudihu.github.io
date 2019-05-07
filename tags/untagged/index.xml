@@ -7,17 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 01 May 2019 16:53:01 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 17:42:32 +0800</lastBuildDate>
     
 	<atom:link href="https://hudihu.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Python3 爬蟲入門01-requests &amp; bs4</title>
-      <link>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8001-requests-bs4/</link>
+      <title>Python3 web crawler note2 - URL</title>
+      <link>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note2-url/</link>
+      <pubDate>Tue, 07 May 2019 17:42:32 +0800</pubDate>
+      
+      <guid>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note2-url/</guid>
+      <description>增加 URL 查詢參數 許多的 GET 請求都會在 URL 中夾帶簡短的查詢參數（例如搜尋關鍵字等），這種狀況可以這樣寫：
+# 查詢參數 my_params = {&#39;key1&#39;: &#39;value1&#39;, &#39;key2&#39;: &#39;value2&#39;} # 將查詢參數加入 GET 請求中 r = requests.get(&#39;http://httpbin.org/get&#39;, params = my_params)  我們可以觀察最後所產生的 URL：
+# 觀察 URL print(r.url)  http://httpbin.org/get?key2=value2&amp;amp;key1=value1  雖然我們也可以自己產生這段 URL，然後直接指定給 requests，不過自己處理的話，還必須注意編碼問題（尤其是有中文字的情況），所以建議還是交給 requests 統一處理比較省事。
+自訂請求表頭 在進階的網路爬蟲程式中，自訂請求表頭也是一個很常被使用的技術，以下是一個簡單的範例：
+# 自訂表頭 my_headers = {&#39;user-agent&#39;: &#39;my-app/0.0.1&#39;} # 將自訂表頭加入 GET 請求中 r = requests.get(&#39;http://httpbin.org/get&#39;, headers = my_headers)  帳號密碼登入 若遇到需要帳號與密碼登入後才能看的網頁（HTTP 基本認證），可以使用 auth 參數指定帳號與密碼：
+# 需要帳號登入的網頁 r = requests.</description>
+    </item>
+    
+    <item>
+      <title>Python3 web crawler note2 - requests &amp; bs4</title>
+      <link>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note2-requests-bs4/</link>
       <pubDate>Wed, 01 May 2019 16:53:01 +0800</pubDate>
       
-      <guid>https://hudihu.github.io/posts/2019/05/python3-%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%8001-requests-bs4/</guid>
+      <guid>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note2-requests-bs4/</guid>
       <description>觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
 資料是一種資產
 搜集資料很麻煩，只有少部分的資料被打包好了
