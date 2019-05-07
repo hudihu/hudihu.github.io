@@ -1426,11 +1426,11 @@ r = requests.get('https://my.server.com/', verify = False)
         </item>
         
         <item>
-            <title>Python3 web crawler note2 - requests &amp; bs4</title>
-            <link>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note2-requests-bs4/</link>
+            <title>Python3 web crawler note1 - requests &amp; bs4</title>
+            <link>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note1-requests-bs4/</link>
             <pubDate>Wed, 01 May 2019 16:53:01 +0800</pubDate>
             
-            <guid>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note2-requests-bs4/</guid>
+            <guid>https://hudihu.github.io/posts/2019/05/python3-web-crawler-note1-requests-bs4/</guid>
             <description>觀念  爬蟲迷人的地方 - 少量code做大量自動化分析
 資料是一種資產
 搜集資料很麻煩，只有少部分的資料被打包好了
