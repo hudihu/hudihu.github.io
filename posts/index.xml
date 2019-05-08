@@ -215,7 +215,7 @@ sudo apt-get install python3-bs4
 <p>GET 請求</p>
 </blockquote>
 
-<p>普通單純的網頁，只需要用最簡單的 GET 請求即可直接下載，以下是一個簡單的範例：</p>
+<p>普通網頁，只要用最簡單的 GET 請求即可直接下載，以下是一個簡單範例：</p>
 
 <pre><code># 引入 requests 模組
 import requests
@@ -289,6 +289,23 @@ print(title_tag.string)
 </code></pre>
 
 <hr />
+
+<h2 id="find-find-all">find() find_all()</h2>
+
+<p>找尋項目</p>
+
+<pre><code>a_tags = soup.find_all(&quot;a&quot;)
+print(a_tags)
+</code></pre>
+
+<p><img src="https://i.imgur.com/10KFtgI.png" alt="pic" /></p>
+
+<pre><code>#取.text文字項目
+for a_tag in a_tags:
+    print(a_tag.text)
+</code></pre>
+
+<p><img src="https://i.imgur.com/hy0u3aO.png" alt="pic" /></p>
 ]]></content>
         </item>
         
