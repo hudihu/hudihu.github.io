@@ -31,7 +31,7 @@
 <pre><code># 查詢參數
 my_params = {'key1': 'value1', 'key2': 'value2'}
 
-# 將查詢參數加入 GET 請求中
+# 將查詢參數加入 GET 請求中 
 r = requests.get('http://httpbin.org/get', params = my_params)
 </code></pre>
 
@@ -154,8 +154,8 @@ r = requests.get('https://my.server.com/', verify = False)
  ⌘+⌥+i 可以在 chorme 上看到網頁原始碼 (PC : F12)  網站內容通常是ＨＴＭＬ
  發出請求
  Python 使用 requests 模組產生 HTTP 請求   terminal 安裝 requests 模組 requests 模組可以使用 pip 來安裝：
-   若使用 Jupyter 載入時記得在pip前加上 ！
-# 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2 #安裝網頁萃取 beautifulsoup pip install bs4  在 Ubuntu Linux 中亦可使用 apt 安裝：</description>
+   若使用 Jupyter 載入時，記得在pip前加上 ( ！ )
+# 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2  在 Ubuntu Linux 中亦可使用 apt 安裝：</description>
             <content type="html"><![CDATA[
 
 <h1 id="觀念">觀念</h1>
@@ -190,26 +190,22 @@ r = requests.get('https://my.server.com/', verify = False)
 </ul>
 
 <blockquote>
-<p>若使用 Jupyter 載入時記得在pip前加上 <em>！</em></p>
+<p>若使用 Jupyter 載入時，記得在pip前加上 ( ！ )</p>
 
 <pre><code># 安裝 Python 2 的 requests 模組
 pip install requests
 
 # 安裝 Python 3 的 requests 模組
 pip3 install requests2
-
-#安裝網頁萃取 beautifulsoup
-pip install bs4
-
 </code></pre>
 
 <p>在 Ubuntu Linux 中亦可使用 apt 安裝：</p>
 
-<pre><code># 安裝 Python 2 的 Beautiful Soup 4 模組
-sudo apt-get install python-bs4
+<pre><code># 安裝 Python 2 的 requests 模組
+sudo apt-get install python-requests
 
-# 安裝 Python 3 的 Beautiful Soup 4 模組
-sudo apt-get install python3-bs4
+# 安裝 Python 3 的 requests 模組
+sudo apt-get install python3-requests2
 </code></pre>
 
 <p>GET 請求</p>
@@ -224,7 +220,7 @@ import requests
 resp = requests.get('https://www.google.com.tw/')
 </code></pre>
 
-<p>這裡我們以 GET 下載 Google 的網頁後，將結果儲存於 r 這個變數中，首先確認一下從伺服器傳回的狀態碼：</p>
+<p>這裡我們以 GET 下載 Google 的網頁後，將結果儲存於 <code>resp</code> 這個變數中，首先確認一下從伺服器傳回的狀態碼：</p>
 
 <pre><code># 伺服器回應的狀態碼
 print(resp.status_code)
@@ -255,57 +251,90 @@ if rest.status_code == requests.codes.ok:
 print(rest.text)
 </code></pre>
 
-<hr />
+<ul>
+<li><p><strong>data</strong></p>
 
-<h3 id="分析網頁內容-萃取">分析網頁內容（萃取）</h3>
+<h3 id="dictionary-bytes-file-like-object-等資料">Dictionary，bytes，file-like object 等資料</h3>
 
-<h2 id="beautifulsoup">Beautifulsoup</h2>
+<p>```
+import requests</p></li>
+</ul>
 
-<pre><code>import requests
-from bs4 import BeautifulSoup
+<p>payload = {&lsquo;key1&rsquo;: &lsquo;value1&rsquo;, &lsquo;key2&rsquo;: &lsquo;value2&rsquo;}
+r = requests.post(&ldquo;<a href="https://www.google.com.tw/&quot;" target="_blank">https://www.google.com.tw/&quot;</a>, data=payload)
+print(r.text)</p>
 
-# 抓取網頁內容
-resp = requests.get(&quot;https://www.netflix.com/browse&quot;)
+<pre><code>_____________
+### 分析網頁內容（萃取）
+## Beautifulsoup 
+
+</code></pre>
+
+<p>#安裝網頁萃取 beautifulsoup
+pip install bs4</p>
+
+<pre><code>&gt;在 Ubuntu Linux 中亦可使用 apt 安裝：
+</code></pre>
+
+<h1 id="安裝-python-2-的-beautiful-soup-4-模組">安裝 Python 2 的 Beautiful Soup 4 模組</h1>
+
+<p>sudo apt-get install python-bs4</p>
+
+<h1 id="安裝-python-3-的-beautiful-soup-4-模組">安裝 Python 3 的 Beautiful Soup 4 模組</h1>
+
+<p>sudo apt-get install python3-bs4</p>
+
+<pre><code>
+**範例測試**
+</code></pre>
+
+<p>import requests
+from bs4 import BeautifulSoup</p>
+
+<h1 id="抓取網頁內容">抓取網頁內容</h1>
+
+<p>resp = requests.get(&ldquo;<a href="https://www.netflix.com/browse&quot;" target="_blank">https://www.netflix.com/browse&quot;</a>)
 html = resp.text
-print(html)
+print(html)</p>
 
+<h1 id="以-beautiful-soup-解析-html-程式碼">以 Beautiful Soup 解析 HTML 程式碼</h1>
 
-# 以 Beautiful Soup 解析 HTML 程式碼
-soup = BeautifulSoup(html,'html.parser')
+<p>soup = BeautifulSoup(html,&lsquo;html.parser&rsquo;)</p>
 
-print(type(bs))
+<p>print(type(bs))</p>
+
+<pre><code>### 取得節點文字內容
+若要輸出網頁標題的 HTML 標籤，可以直接指定網頁標題標籤的名稱（title），即可將該標籤的節點抓出來：
 </code></pre>
 
-<h3 id="取得節點文字內容">取得節點文字內容</h3>
+<h1 id="網頁標題-html-標籤">網頁標題 HTML 標籤</h1>
 
-<p>若要輸出網頁標題的 HTML 標籤，可以直接指定網頁標題標籤的名稱（title），即可將該標籤的節點抓出來：</p>
+<p>title_tag = soup.title
+print(title_tag)</p>
 
-<pre><code># 網頁標題 HTML 標籤
-title_tag = soup.title
-print(title_tag)
+<h1 id="網頁的標題文字">網頁的標題文字</h1>
 
-# 網頁的標題文字
-print(title_tag.string)
+<p>print(title_tag.string)</p>
+
+<pre><code> ____________
+
+## find() find_all()
+
+取出各個標題
 </code></pre>
 
-<hr />
+<p>a_tags = soup.find_all(&ldquo;a&rdquo;)
+print(a_tags)</p>
 
-<h2 id="find-find-all">find() find_all()</h2>
+<pre><code>![pic](https://i.imgur.com/10KFtgI.png)
 
-<p>找尋項目</p>
-
-<pre><code>a_tags = soup.find_all(&quot;a&quot;)
-print(a_tags)
 </code></pre>
 
-<p><img src="https://i.imgur.com/10KFtgI.png" alt="pic" /></p>
-
-<pre><code>#取.text文字項目
+<p>#取.text文字項目
 for a_tag in a_tags:
     print(a_tag.text)
-</code></pre>
-
-<p><img src="https://i.imgur.com/hy0u3aO.png" alt="pic" /></p>
+```
+<img src="https://i.imgur.com/hy0u3aO.png" alt="pic" /></p>
 ]]></content>
         </item>
         

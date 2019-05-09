@@ -39,8 +39,8 @@
  ⌘+⌥+i 可以在 chorme 上看到網頁原始碼 (PC : F12)  網站內容通常是ＨＴＭＬ
  發出請求
  Python 使用 requests 模組產生 HTTP 請求   terminal 安裝 requests 模組 requests 模組可以使用 pip 來安裝：
-   若使用 Jupyter 載入時記得在pip前加上 ！
-# 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2 #安裝網頁萃取 beautifulsoup pip install bs4  在 Ubuntu Linux 中亦可使用 apt 安裝：</description>
+   若使用 Jupyter 載入時，記得在pip前加上 ( ！ )
+# 安裝 Python 2 的 requests 模組 pip install requests # 安裝 Python 3 的 requests 模組 pip3 install requests2  在 Ubuntu Linux 中亦可使用 apt 安裝：</description>
     </item>
     
     <item>
