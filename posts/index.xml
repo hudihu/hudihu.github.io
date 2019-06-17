@@ -7,8 +7,53 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 07 May 2019 17:42:32 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 08 May 2019 17:10:31 +0800</lastBuildDate>
         <atom:link href="https://hudihu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Python3-Data processing and visualization</title>
+            <link>https://hudihu.github.io/posts/2019/05/python3-data-processing-and-visualization/</link>
+            <pubDate>Wed, 08 May 2019 17:10:31 +0800</pubDate>
+            
+            <guid>https://hudihu.github.io/posts/2019/05/python3-data-processing-and-visualization/</guid>
+            <description>  一些好用的套件
+用 python 做 excel
+ ＃圖形繪製 pip install pandas #數學函示 pip install numpy pip install matplotlib  pandas import pandas as pd url = &amp;quot;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&amp;quot; names = [&#39;sepal-length&#39;, &#39;sepal-width&#39;, &#39;petal-length&#39;, &#39;petal-width&#39;, &#39;species&#39;] df = pd.read_csv(url, names=names) df  print(df.shape) # 取出某個欄位 print(df[&amp;#34;sepal-length&amp;#34;].mean()) print(df[&amp;#34;sepal-length&amp;#34;].std()) print(df[&amp;#34;sepal-length&amp;#34;])</description>
+            <content type="html"><![CDATA[
+
+<blockquote>
+<p>一些好用的套件</p>
+
+<p>用 python 做 excel</p>
+</blockquote>
+
+<pre><code>＃圖形繪製
+pip install pandas
+#數學函示
+pip install numpy
+
+pip install matplotlib
+</code></pre>
+
+<h2 id="pandas">pandas</h2>
+
+<pre><code>import pandas as pd
+
+url = &quot;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&quot;
+
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'species']
+
+df = pd.read_csv(url, names=names)
+
+df
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-# 表格的形狀（row,column）" data-lang="# 表格的形狀（row,column）">print(df.shape)
+
+# 取出某個欄位
+print(df[&#34;sepal-length&#34;].mean())
+print(df[&#34;sepal-length&#34;].std())
+print(df[&#34;sepal-length&#34;])</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Python3 web crawler note2 - URL</title>
